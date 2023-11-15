@@ -210,3 +210,11 @@ gradle.taskGraph.whenReady({ graph ->
     it.tasks.withType(Test)
   }.flatten()
 })
+
+tasks.named('test', Test) {
+    retry {
+          maxRetries = 3
+          failOnPassedAfterRetry = true
+          maxFailures = 20
+    }
+}

@@ -48,7 +48,7 @@ def isJenkins = System.getenv('JENKINS_URL') != null
 def isCI = isGithubActions || isJenkins
 
 gradleEnterprise {
-  server = "http://potato:9080"
+  server = "https://develocity-field.gradle.com"
   allowUntrustedServer = true
 
   buildScan {
